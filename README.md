@@ -4,3 +4,6 @@
 
 ### About
 Watts is a desktop application for performing Physics formula calculations.
+
+### License
+* Joules is licensed under the [MIT license](https://www.github.com/elailai94/Watts/blob/master/LICENSE.md).
