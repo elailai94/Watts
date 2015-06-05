@@ -3,4 +3,4 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-ruby.svg)](http://forthebadge.com)
 
 ### About
-Watts is a desktop application.
+Watts is a desktop application for performing Physics formula calculations.
