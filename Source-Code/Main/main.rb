@@ -15,6 +15,4 @@ end
 
 require 'joules'
 
-Shoes.app do
-  nil
-end
+Shoes.app(title: 'Watts')
