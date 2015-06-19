@@ -20,6 +20,6 @@ require 'screens/constants_screen'
 
 # Initializes a Shoes app window.
 Shoes.app(:title => 'Watts',
-	      :height => 720,
-	      :width => 1080,
-	      :resizable => false)
+	  :height => 720,
+	  :width => 1080,
+	  :resizable => false)
