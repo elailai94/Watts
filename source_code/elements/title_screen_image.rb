@@ -19,7 +19,7 @@ class TitleScreenImage < Element
   # @param left [Int, Float]
   # @return [TitleScreenImage]
   def initialize(app, name)
-  	super(app, 'Title Screen', 'Image')
+    super(app, 'Title Screen', 'Image')
     @image_path = "../images/#{name}.png"
     @image_link = "/title_screen/#{name}_screen"
     @app.image(@image_path,
