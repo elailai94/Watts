@@ -20,8 +20,8 @@ class TitleScreenHeader < Element
   def initialize(app, colour, path)
     super(app, 'Title Screen', 'Header')
     @app.flow(:height => 80, :width => 1080, :scroll => false) do
-  	  @app.background(colour)
-  	  @app.image(path,
+      @app.background(colour)
+      @app.image(path,
   	             :height => 60,
   	             :width => 298,
   	             :top => 10,
