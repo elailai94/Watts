@@ -18,4 +18,8 @@ require 'screens/splash_screen'
 require 'screens/title_screen'
 require 'screens/constants_screen'
 
-Shoes.app(:title => 'Watts', :height => 720, :width => 1080, :resizable => false)
+# Initializes a Shoes app window.
+Shoes.app(:title => 'Watts',
+	      :height => 720,
+	      :width => 1080,
+	      :resizable => false)

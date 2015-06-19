@@ -8,6 +8,8 @@
 
 # Splash screen module (splash_screen.rb)
 
+require 'elements/splash_screen_image'
+
 # Object definition
 class SplashScreen < Shoes
   
@@ -16,7 +18,7 @@ class SplashScreen < Shoes
   # Draws the splash screen on the Shoes app window.
   def splash_screen
     background(crimson)
-    image('../images/watts_logo_white.png', :top => 310, :left => 292)
+    SplashScreenImage.new(self, '../images/watts_logo_white.png')
     timer(3) do
       visit('/title_screen')
     end

@@ -8,6 +8,9 @@
 
 # Title screen module (title_screen.rb)
 
+require 'elements/title_screen_header'
+require 'elements/title_screen_image'
+
 # Object definition
 class TitleScreen < Shoes
   
@@ -15,11 +18,9 @@ class TitleScreen < Shoes
 
   # Draws the title screen on the Shoes app window.
   def title_screen
-    # Title screen heading
-    flow(:height => 80, :width => 1080, :scroll => false) do
-      background(crimson)
-      image('../images/watts_logo_white.png', :height => 60, :top => 10, :left => 10)
-    end
+    # Title screen header
+    TitleScreenHeader.new(self, crimson, '../images/watts_logo_white.png')
+    
     # Title screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       background(ghostwhite)
@@ -30,13 +31,7 @@ class TitleScreen < Shoes
         'quantum', 'gravitational_fields', 'electric_fields',
         'magnetic_fields', 'geometry', 'conversions']
       @image_names.each do |image_name|
-        @image_path = '../images/#{image_name}.png'
-        @image_link = '/title_screen/#{image_name[0..-5]}_screen'
-        image(@image_path,
-              :height => 160,
-              :width => 216,
-              :margin => 2,
-              :click => @image_link)
+        TitleScreenImage.new(self, image_name)
       end
     end
   end

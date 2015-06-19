@@ -8,6 +8,8 @@
 
 # Constants screen module (constants_screen.rb)
 
+require_relative '../elements/screen_header.rb'
+
 # Object definition
 class ConstantsScreen < Shoes
   
@@ -15,36 +17,47 @@ class ConstantsScreen < Shoes
 
   # Draws the constants screen on the Shoes app window.
   def constants_screen
-  	background(ghostwhite)
-  	# Constants screen heading
-    flow(:height => 80, :width => 1080, :scroll => false) do
-      image('../images/back_icon.png',
-      	    :height => 50,
-      	    :top => 15, :left => 15,
-      	    :click => '/title_screen')
-      title('Constants',
-      	    :top => 4, :left => 80,
-      	    :font => 'Segoe UI')
-    end
-    
+  	# Constants screen header
+  	ScreenHeader.new(self, crimson, 'Constants')
+
     # Title screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
+      background(ghostwhite)
       # Left margin offset
-      stack(:width => 15) do
+      stack(:height => 640, :width => 80) do
       end
       # First content column 
-      stack(:width => 532.5) do
+      stack(:height => 640, :width => 500) do
         para('Speed of light in free space',
         	 :font => 'Segoe UI',
         	 :size => 16)
-        para('3.00 x 10', sup('8'), ' ms', sup('-1'), :font => 'Segoe UI')
+        para("3.00 x 10", sup("8"), " ms", sup("-1"),
+        	 :font => "Segoe UI")
+        para("Permittivity of free space",
+        	 :font => "Segoe UI",
+             :size => 16)
+        para("8.85 x 10", sup("-12"), " Fm", sup("-1"),
+        	 :font => "Segoe UI")
+        para("Planck constant",
+        	 :font => "Segoe UI",
+        	 :size => 16)
+        para("6.63 x 10", sup("-34"), " Js",
+        	 :font => "Segoe UI")
       end
       # Second content column
-      stack(:width => 532.5) do
-        para('Permeability of free space',
-        	 :font => 'Segoe UI',
+      stack(:height => 640, :width => 500) do
+        para("Permeability of free space",
+        	 :font => "Segoe UI",
         	 :size => 16)
-        para('4')
+        para("4#{"\u03C0"} x 10", sup("-7"), " Hm", sup("-1"),
+        	 :font => "Segoe UI")
+        para("Elementary charge",
+        	 :font => "Segoe UI",
+        	 :size => 16)
+        para("1.60 x 10", sup("-19"), " C", :font => "Segoe UI")
+        para("Unified atomic mass unit",
+        	 :font => "Segoe UI",
+        	 :size => 16)
       end
     end
   end
