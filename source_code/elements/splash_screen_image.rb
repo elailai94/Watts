@@ -15,10 +15,10 @@ class SplashScreenImage < Element
 
   # Initializes the object.
   def initialize(app, path)
-	super(app, 'Splash Screen', 'Image')
-	@app.image(path,
-		       :top => 310,
-		       :left => 292)
+    super(app, 'Splash Screen', 'Image')
+    @app.image(path,
+	       :top => 310,
+	       :left => 292)
   end
 	
 end
