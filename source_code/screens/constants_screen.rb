@@ -17,8 +17,8 @@ class ConstantsScreen < Shoes
 
   # Draws the constants screen on the Shoes app window.
   def constants_screen
-  	# Constants screen header
-  	ScreenHeader.new(self, crimson, 'Constants')
+    # Constants screen header
+    ScreenHeader.new(self, crimson, 'Constants')
 
     # Title screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
