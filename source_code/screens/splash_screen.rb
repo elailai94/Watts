@@ -16,7 +16,7 @@ class SplashScreen < Shoes
   # Draws the splash screen on the Shoes app window.
   def splash_screen
     background(crimson)
-    image('../../Images/watts_logo_white.png', :top => 310, :left => 292)
+    image('../images/watts_logo_white.png', :top => 310, :left => 292)
     timer(3) do
       visit('/title_screen')
     end
