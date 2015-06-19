@@ -22,10 +22,10 @@ class TitleScreenHeader < Element
   	@app.flow(:height => 80, :width => 1080, :scroll => false) do
   	  @app.background(colour)
   	  @app.image(path,
-  		           :height => 60,
-  		           :width => 298,
-  		           :top => 10,
-  		           :left => 10)
+  	             :height => 60,
+  	             :width => 298,
+  	             :top => 10,
+  	             :left => 10)
   	end
   end
 
