@@ -13,15 +13,15 @@ class Element
   
   # Initializes the object.
   def initialize(app, screen, type)
-  	@app = app
-  	@screen = screen
+    @app = app
+    @screen = screen
     @type = type
   end
 
   # Returns a string representation of the object.
   # @return [String]
   def to_s
-  	return "#{@screen} #{@type}"
+    return "#{@screen} #{@type}"
   end
 
 end
