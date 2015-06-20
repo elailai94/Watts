@@ -17,6 +17,7 @@ require 'joules'
 require 'screens/splash_screen'
 require 'screens/title_screen'
 require 'screens/constants_screen'
+require 'screens/kinematics_screen'
 
 # Initializes a Shoes app window.
 Shoes.app(:title => 'Watts',

@@ -1,7 +1,8 @@
 #==============================================================================
 # Watts
 #
-# @description: Module for providing functions to work with TitleScreenImage objects
+# @description: Module for providing functions to work with TitleScreenImage
+#   objects
 # @author: Elisha Lai
 # @version: 0.0.1 15/06/2015
 #==============================================================================

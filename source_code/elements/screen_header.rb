@@ -14,8 +14,8 @@ require_relative 'element.rb'
 class ScreenHeader < Element
 
   # Initializes the object.
-  def initialize(app, colour, title)
-    super(app, "#{title} Screen", 'Header')
+  def initialize(app, colour, heading)
+    super(app, "#{heading} Screen", 'Header')
     @app.flow(:height => 80, :width => 1080, :scroll => false) do
       @app.background(colour)
       @app.image('../images/back_icon_white.png',
@@ -23,7 +23,7 @@ class ScreenHeader < Element
       	         :top => 15,
       	         :left => 15,
       	         :click => '/title_screen')
-      @app.title(title,
+      @app.title(heading,
       	         :top => 4,
       	         :left => 80,
       	         :font => 'Segoe UI',
