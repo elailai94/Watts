@@ -18,9 +18,9 @@ class KinematicsScreen < Shoes
 
   # Draws the kinematics screen on the Shoes app window.
   def kinematics_screen
-	# Kinematics screen header
-	@header = 'Kinematics'
-	ScreenHeader.new(self, crimson, @header)	
+    # Kinematics screen header
+    @header = 'Kinematics'
+    ScreenHeader.new(self, crimson, @header)	
   end
 	
 end
