@@ -34,10 +34,10 @@ class ConstantsScreen < Shoes
       	para(' ', :size => 3)
         ConstantsScreenText.new(self, @header, 'Speed of light in free space')
         para('3.00 x 10', sup('8'), ' ms', sup('-1'),
-        	 :font => 'Segoe UI')
+             :font => 'Segoe UI')
         ConstantsScreenText.new(self, @header, 'Permittivity of free space')
         para('8.85 x 10', sup('-12'), ' Fm', sup('-1'),
-        	 :font => 'Segoe UI')
+             :font => 'Segoe UI')
         ConstantsScreenText.new(self, @header, 'Planck constant')
         para('6.63 x 10', sup('-34'), ' Js',
         	 :font => 'Segoe UI')
