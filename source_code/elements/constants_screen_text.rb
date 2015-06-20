@@ -16,10 +16,10 @@ class ConstantsScreenText < Element
 
   # Initializes the object.
   def initialize(app, screen, text)
-	super(app, screen, 'Text')
-	@app.para(text,
-	  	      :font => 'Segoe UI',
-	  	      :size => 16)
+    super(app, screen, 'Text')
+    @app.para(text,
+              :font => 'Segoe UI',
+              :size => 16)
   end
 	
 end
