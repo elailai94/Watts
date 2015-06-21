@@ -21,11 +21,11 @@ class ScreenBox < Element
     @app.stack(:height => 100, :width => 940, :margin => 2, :click => @box_link) do
       @app.background(colour)
       @app.para(text,
-	  	:top => 24,
-	  	:left => 10,
-	  	:font => font,
-	  	:size => 20,
-	  	:stroke => @app.rgb(255, 255, 255))
+      	        :top => 24,
+      	        :left => 10,
+      	        :font => font,
+      	        :size => 20,
+      	        :stroke => @app.rgb(255, 255, 255))
     end
   end
 
