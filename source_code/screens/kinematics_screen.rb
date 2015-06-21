@@ -19,8 +19,8 @@ class KinematicsScreen < Shoes
 
   # Draws the kinematics screen on the Shoes app window.
   def kinematics_screen
-  	@heading = 'Kinematics'
-  	background("../images/#{@heading.downcase}_large.jpg", :height => 750, :width => 1080)
+    @heading = 'Kinematics'
+    background("../images/#{@heading.downcase}_large.jpg", :height => 750, :width => 1080)
     
     # Kinematics screen header
     ScreenHeader.new(self, @@font, @heading)
@@ -41,10 +41,10 @@ class KinematicsScreen < Shoes
           ScreenBox.new(self, @@theme_colour, @@font, @heading, formula)
         end
         @screen_box_text_styles = {:top => 24,
-        	                       :left => 10,
-        	                       :font => @@font,
-        	                       :size => 20,
-        	                       :stroke => rgb(255,255,255)}
+                                   :left => 10,
+                                   :font => @@font,
+                                   :size => 20,
+                                   :stroke => rgb(255,255,255)}
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @final_velocity = para('Final velocity = (initial velocity', sup('2'),
