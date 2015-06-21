@@ -19,7 +19,7 @@ class TitleScreen < Shoes
   # Draws the title screen on the Shoes app window.
   def title_screen
     # Title screen header
-    TitleScreenHeader.new(self, crimson, '../images/watts_logo_white.png')
+    TitleScreenHeader.new(self, @@theme_colour, '../images/watts_logo_white.png')
     
     # Title screen content
     flow(:height => 640, :width => 1080, :scroll => true) do

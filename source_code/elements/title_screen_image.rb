@@ -21,7 +21,7 @@ class TitleScreenImage < Element
   # @return [TitleScreenImage]
   def initialize(app, name)
     super(app, 'Title Screen', 'Image')
-    @image_path = "../images/#{name}.png"
+    @image_path = "../images/#{name}_small.png"
     @image_link = "/title_screen/#{name}_screen"
     @app.image(@image_path,
                :height => 160,

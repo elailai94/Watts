@@ -15,11 +15,12 @@ require_relative 'element.rb'
 class ConstantsScreenText < Element
 
   # Initializes the object.
-  def initialize(app, screen, text)
-    super(app, screen, 'Text')
+  def initialize(app, font, text)
+    super(app, 'Constants Screen', 'Text')
     @app.para(text,
-              :font => 'Segoe UI',
-              :size => 16)
+              :font => font,
+              :size => 20,
+              :stroke => @app.rgb(255, 255, 255))
   end
 	
 end
