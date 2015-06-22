@@ -16,10 +16,10 @@ class ScreenEditLine < Element
 
   # Initializes the object.
   def initialize(app, font, heading)
-  	@heading_edited = heading.split('=')[0].strip
-	super(app, "#{@heading_edited} screen", 'Edit line')
-	@edit_line = @app.edit_line(:width => 500,
-		                        :font => font)
+    @heading_edited = heading.split('=')[0].strip
+    super(app, "#{@heading_edited} screen", 'Edit line')
+    @edit_line = @app.edit_line(:width => 500,
+                                :font => font)
   end
 
   # Returns the string of characters which have been typed into the object.
