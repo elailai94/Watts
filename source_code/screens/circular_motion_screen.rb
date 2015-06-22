@@ -18,8 +18,8 @@ class CircularMotionScreen < Shoes
   url('/title_screen/circular_motion_screen', :circular_motion_screen)
 
   def circular_motion_screen
-  	@heading = 'Circular motion'
-  	background("../images/#{@heading.downcase.sub(' ','_')}_large.png")
+    @heading = 'Circular motion'
+    background("../images/#{@heading.downcase.sub(' ','_')}_large.png")
 
   	# Circular motion screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
@@ -81,7 +81,7 @@ class CircularMotionScreen < Shoes
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @angular_kinetic_energy = para('Angular kinetic energy = 0.5 x moment of inertia x angular velocity',
-          	                       sup('2'))
+          	                             sup('2'))
           @angular_kinetic_energy.style(@screen_box_text_styles)
         end
       end
