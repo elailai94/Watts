@@ -20,17 +20,17 @@ class KinematicsScreen < Shoes
   # Draws the kinematics screen on the Shoes app window.
   def kinematics_screen
     @heading = 'Kinematics'
-    background("../images/#{@heading.downcase}_large.jpg", :height => 750, :width => 1080)
+    background("../images/#{@heading.downcase}_large.png")
     
     # Kinematics screen header
-    ScreenHeader.new(self, @@font, @heading)
+    ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
     # Kinematics screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
       stack(:height => 850, :width => 80) do
       end
-      # First content column 
+      # Content column 
       stack(:height => 850, :width => 1000) do
         @formula_set =
           ['Average speed = distance / time',
@@ -45,23 +45,27 @@ class KinematicsScreen < Shoes
                                    :font => @@font,
                                    :size => 20,
                                    :stroke => rgb(255,255,255)}
+
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @final_velocity = para('Final velocity = (initial velocity', sup('2'),
                                  ' + (2 × acceleration × displacement))', sup('0.5'))
           @final_velocity.style(@screen_box_text_styles)
         end
+
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @displacement_v1 = para('Displacement = 0.5 × (initial velocity + final velocity) × time')
           @displacement_v1.style(@screen_box_text_styles)
         end
+
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @displacement_v2 = para('Displacement = (initial velocity × time) + (0.5 × acceleration × time',
                                   sup('2'), ')')
           @displacement_v2.style(@screen_box_text_styles)
         end
+
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @displacement_v3 = para('Displacement = (final velocity × time) - (0.5 × acceleration × time',

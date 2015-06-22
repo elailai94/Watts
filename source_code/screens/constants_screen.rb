@@ -13,7 +13,7 @@ require 'elements/constants_screen_text'
 
 # Object definition
 class ConstantsScreen < Shoes
-  
+
   url('/title_screen/constants_screen', :constants_screen)
 
   # Draws the constants screen on the Shoes app window.
@@ -22,12 +22,12 @@ class ConstantsScreen < Shoes
     background("../images/#{@heading.downcase}_large.png")
     
     # Constants screen header
-    ScreenHeader.new(self, @@font, @heading)
+    ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
     # Constants screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       @constants_screen_tagline_styles = {:font => @@font,
-      	                                  :size => 15,
+      	                                  :size => 16,
       	                                  :stroke => rgb(255, 255, 255)}
       # Left margin offset
       stack(:height => 850, :width => 80)

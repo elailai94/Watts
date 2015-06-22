@@ -18,6 +18,8 @@ require 'screens/splash_screen'
 require 'screens/title_screen'
 require 'screens/constants_screen'
 require 'screens/kinematics_screen'
+require 'screens/kinematics-screens/average_speed_screen'
+require 'screens/circular_motion_screen'
 
 # Stores Shoes app user interface properties.
 class Shoes

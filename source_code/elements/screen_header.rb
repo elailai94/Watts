@@ -14,14 +14,15 @@ require_relative 'element.rb'
 class ScreenHeader < Element
 
   # Initializes the object.
-  def initialize(app, font, heading)
-    super(app, "#{heading} Screen", 'Header')
+  def initialize(app, previous_url, font, heading)
+  	@heading_edited = heading.split('=')[0].strip
+    super(app, "#{@heading_edited} screen", 'Header')
     @app.flow(:height => 80, :width => 1080, :scroll => false) do
       @app.image('../images/back_icon_white.png',
       	         :height => 50,
       	         :top => 15,
       	         :left => 15,
-      	         :click => '/title_screen')
+      	         :click => previous_url)
       @app.title(heading,
       	         :top => 4,
       	         :left => 80,

@@ -15,10 +15,10 @@ class ScreenBox < Element
 	
   # Initializes the object.
   def initialize(app, colour, font, heading, text)
-    super(app, "#{heading} Screen", 'Header')
+    super(app, "#{heading} screen", 'Header')
     @text_edited = text.split('=')[0].strip.sub(' ','_').downcase
     @box_link = "/title_screen/#{heading.downcase}_screen/#{@text_edited}_screen"
-    @app.stack(:height => 100, :width => 940, :margin => 2, :click => @box_link) do
+    @app.stack(:height => 100, :width => 940, :margin => 2) do
       @app.background(colour)
       @app.para(text,
       	        :top => 24,
@@ -26,6 +26,9 @@ class ScreenBox < Element
       	        :font => font,
       	        :size => 20,
       	        :stroke => @app.rgb(255, 255, 255))
+      @app.click do
+        @app.visit(@box_link)
+      end
     end
   end
 
