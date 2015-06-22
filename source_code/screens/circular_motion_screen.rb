@@ -20,8 +20,8 @@ class CircularMotionScreen < Shoes
   def circular_motion_screen
     @heading = 'Circular motion'
     background("../images/#{@heading.downcase.sub(' ','_')}_large.png")
-
-  	# Circular motion screen header
+    
+    # Circular motion screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
     # Circular motion screen content
@@ -47,28 +47,28 @@ class CircularMotionScreen < Shoes
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_acceleration_v1 = para('Centripetal acceleration = linear velocity',
-          	                                  sup('2'), ' / radius')
+                                              sup('2'), ' / radius')
           @centripetal_acceleration_v1.style(@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_acceleration_v2 = para('Centripetal acceleration = angular velocity',
-          	                                  sup('2'), ' x radius')
+                                              sup('2'), ' x radius')
           @centripetal_acceleration_v2.style(@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_force_v1 = para('Centripetal force = (mass x linear velocity',
-          	                           sup('2'), ') / radius')
+                                       sup('2'), ') / radius')
           @centripetal_force_v1.style(@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_force_v2 = para('Centripetal force = mass x angular velocity',
-          	                           sup('2'), ' x radius')
+                                       sup('2'), ' x radius')
           @centripetal_force_v2.style(@screen_box_text_styles)
         end
 
@@ -81,7 +81,7 @@ class CircularMotionScreen < Shoes
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @angular_kinetic_energy = para('Angular kinetic energy = 0.5 x moment of inertia x angular velocity',
-          	                             sup('2'))
+                                         sup('2'))
           @angular_kinetic_energy.style(@screen_box_text_styles)
         end
       end
