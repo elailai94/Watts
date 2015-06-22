@@ -33,29 +33,32 @@ class AverageSpeedScreen < Shoes
       end
       # Content column 
       stack(:height => 640, :width => 1000) do
-      	@screen_unit_text_styles = {:font => font,
-      		                    :size => 12,
-                                    :stroke => rgb(255,255,255)}
-        
         ScreenLabel.new(self, @@font, @heading, 'Distance')
         flow do
           @distance = ScreenEditLine.new(self, @@font, @heading)
-          @distance_unit = para('m')
-          @distance_unit.style(@screen_unit_text_styles)
+          @distance_unit = para(strong(' m'))
+          @distance_unit.style(@@screen_unit_text_styles)
         end
         
         ScreenLabel.new(self, @@font, @heading, 'Time')
         flow do
           @time = ScreenEditLine.new(self, @@font, @heading)
-          @time_unit = para('s')
-          @time_unit.style(@screen_unit_text_styles)
+          @time_unit = para(strong(' s'))
+          @time_unit.style(@@screen_unit_text_styles)
         end
 
-        @calculate_button = button('Calculate')
-        @average_speed = para(' ', :size => 25, :stroke => rgb(255,255,255)) 
-        @calculate_button.click do
-          @result = Joules.avg_speed(@distance.text.to_f, @time.text.to_f)
-          @average_speed.replace(@result.to_s)
+        @calculate = button('Calculate')
+        
+        @result_display = flow
+        
+        @calculate.click do
+          @result_display.clear do
+            @result = Joules.avg_speed(@distance.text.to_f, @time.text.to_f)
+            @average_speed = para(@result.to_s)
+            @average_speed_unit = para(' ms', sup('-1'))
+            @average_speed.style(@@screen_result_text_styles)
+            @average_speed_unit.style(@@screen_result_text_styles)
+          end
         end
       end
     end
