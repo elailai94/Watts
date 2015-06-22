@@ -38,51 +38,46 @@ class CircularMotionScreen < Shoes
         @formula_set.each do |formula|
           ScreenBox.new(self, @@theme_colour, @@font, @heading, formula)
         end
-        @screen_box_text_styles = {:top => 24,
-                                   :left => 10,
-                                   :font => @@font,
-                                   :size => 20,
-                                   :stroke => rgb(255,255,255)}
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_acceleration_v1 = para('Centripetal acceleration = linear velocity',
-                                              sup('2'), ' / radius')
-          @centripetal_acceleration_v1.style(@screen_box_text_styles)
+          	                                  sup('2'), ' / radius')
+          @centripetal_acceleration_v1.style(@@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_acceleration_v2 = para('Centripetal acceleration = angular velocity',
-                                              sup('2'), ' x radius')
-          @centripetal_acceleration_v2.style(@screen_box_text_styles)
+          	                                  sup('2'), ' x radius')
+          @centripetal_acceleration_v2.style(@@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_force_v1 = para('Centripetal force = (mass x linear velocity',
-                                       sup('2'), ') / radius')
-          @centripetal_force_v1.style(@screen_box_text_styles)
+          	                           sup('2'), ') / radius')
+          @centripetal_force_v1.style(@@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @centripetal_force_v2 = para('Centripetal force = mass x angular velocity',
-                                       sup('2'), ' x radius')
-          @centripetal_force_v2.style(@screen_box_text_styles)
+          	                           sup('2'), ' x radius')
+          @centripetal_force_v2.style(@@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @angular_momentum = para('Angular momentum = moment of inertia x angular velocity')
-          @angular_momentum.style(@screen_box_text_styles)
+          @angular_momentum.style(@@screen_box_text_styles)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @angular_kinetic_energy = para('Angular kinetic energy = 0.5 x moment of inertia x angular velocity',
-                                         sup('2'))
-          @angular_kinetic_energy.style(@screen_box_text_styles)
+          	                             sup('2'))
+          @angular_kinetic_energy.style(@@screen_box_text_styles)
         end
       end
     end
