@@ -20,13 +20,13 @@ class AverageSpeedScreen < Shoes
 
   # Draws the average speed screen on the Shoes app window.
   def average_speed_screen
-	@heading = 'Average speed = distance / time'
-	background('../images/kinematics_large.png')
+    @heading = 'Average speed = distance / time'
+    background('../images/kinematics_large.png')
 
-	# Average speed screen header
-	ScreenHeader.new(self, '/title_screen/kinematics_screen', @@font, @heading)
+    # Average speed screen header
+    ScreenHeader.new(self, '/title_screen/kinematics_screen', @@font, @heading)
 
-	# Average speed screen content
+    # Average speed screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
       stack(:height => 640, :width => 80) do
@@ -34,7 +34,7 @@ class AverageSpeedScreen < Shoes
       # Content column 
       stack(:height => 640, :width => 1000) do
       	@screen_unit_text_styles = {:font => font,
-      		                        :size => 12,
+      		                    :size => 12,
                                     :stroke => rgb(255,255,255)}
         
         ScreenLabel.new(self, @@font, @heading, 'Distance')
