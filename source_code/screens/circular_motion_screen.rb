@@ -19,7 +19,8 @@ class CircularMotionScreen < Shoes
 
   def circular_motion_screen
     @heading = 'Circular motion'
-    background("../images/#{@heading.downcase.sub(' ','_')}_large.png")
+    @heading_edited = @heading.downcase.gsub(' ','_')
+    background("../images/#{@heading_edited}_large.png")
     
     # Circular motion screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
@@ -32,11 +33,11 @@ class CircularMotionScreen < Shoes
       # Content column 
       stack(:height => 950, :width => 1000) do
         @formula_set =
-          ['Angular velocity = linear velocity / radius',
-           'Angular velocity = 2π x frequency of rotation',
-           'Angular acceleration = (final angular velocity - initial angular velocity) / time']
-        @formula_set.each do |formula|
-          ScreenBox.new(self, @@theme_colour, @@font, @heading, formula)
+          {'Angular velocity v1' => 'Angular velocity = linear velocity / radius',
+           'Angular velocity v2' => 'Angular velocity = 2π x frequency of rotation',
+           'Angular acceleration' => 'Angular acceleration = (final angular velocity - initial angular velocity) / time'}
+        @formula_set.each do |name, formula|
+          ScreenBox.new(self, @@theme_colour, @@font, @heading, formula, name)
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
@@ -44,6 +45,9 @@ class CircularMotionScreen < Shoes
           @centripetal_acceleration_v1 = para('Centripetal acceleration = linear velocity',
                                               sup('2'), ' / radius')
           @centripetal_acceleration_v1.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/centripetal_acceleration_v1_screen")
+          end
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
@@ -51,6 +55,9 @@ class CircularMotionScreen < Shoes
           @centripetal_acceleration_v2 = para('Centripetal acceleration = angular velocity',
                                               sup('2'), ' x radius')
           @centripetal_acceleration_v2.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/centripetal_acceleration_v2_screen")
+          end
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
@@ -58,6 +65,9 @@ class CircularMotionScreen < Shoes
           @centripetal_force_v1 = para('Centripetal force = (mass x linear velocity',
                                        sup('2'), ') / radius')
           @centripetal_force_v1.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/centripetal_force_v1_screen")
+          end
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
@@ -65,12 +75,18 @@ class CircularMotionScreen < Shoes
           @centripetal_force_v2 = para('Centripetal force = mass x angular velocity',
                                        sup('2'), ' x radius')
           @centripetal_force_v2.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/centripetal_acceleration_v2_screen")
+          end
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
           @angular_momentum = para('Angular momentum = moment of inertia x angular velocity')
           @angular_momentum.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/angular_momentum_screen")
+          end
         end
 
         stack(:height => 100, :width => 940, :margin => 2) do
@@ -78,6 +94,9 @@ class CircularMotionScreen < Shoes
           @angular_kinetic_energy = para('Angular kinetic energy = 0.5 x moment of inertia x angular velocity',
                                          sup('2'))
           @angular_kinetic_energy.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/angular_kinetic_energy_screen")
+          end
         end
       end
     end

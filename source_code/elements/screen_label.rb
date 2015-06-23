@@ -15,7 +15,7 @@ class ScreenLabel < Element
   
   # Initializes the object.
   def initialize(app, font, heading, text)
-  	@heading_edited = heading.split('=')[0].strip
+    @heading_edited = heading.split('=')[0].strip
     super(app, "#{@heading_edited} screen", 'label')
     @app.para(text,
               :font => font,

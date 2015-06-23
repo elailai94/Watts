@@ -15,7 +15,7 @@ class ScreenHeader < Element
 
   # Initializes the object.
   def initialize(app, previous_url, font, heading)
-  	@heading_edited = heading.split('=')[0].strip
+    @heading_edited = heading.split('=')[0].strip
     super(app, "#{@heading_edited} screen", 'Header')
     @app.flow(:height => 80, :width => 1080, :scroll => false) do
       @app.image('../images/back_icon_white.png',
@@ -24,10 +24,12 @@ class ScreenHeader < Element
       	         :left => 15,
       	         :click => previous_url)
       @app.title(heading,
+                 :width => 940,
       	         :top => 4,
       	         :left => 80,
       	         :font => font,
-      	         :stroke => @app.rgb(255, 255, 255))
+      	         :stroke => @app.rgb(255, 255, 255),
+                 :wrap => 'trim')
     end
   end
 	

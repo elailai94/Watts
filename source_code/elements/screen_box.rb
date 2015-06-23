@@ -14,10 +14,10 @@ require_relative 'element.rb'
 class ScreenBox < Element
 	
   # Initializes the object.
-  def initialize(app, colour, font, heading, text)
+  def initialize(app, colour, font, heading, text, link_name)
     super(app, "#{heading} screen", 'Header')
-    @text_edited = text.split('=')[0].strip.sub(' ','_').downcase
-    @box_link = "/title_screen/#{heading.downcase}_screen/#{@text_edited}_screen"
+    @link_name_edited = link_name.gsub(' ','_').downcase
+    @box_link = "/title_screen/#{heading.downcase}_screen/#{@link_name_edited}_screen"
     @app.stack(:height => 100, :width => 940, :margin => 2) do
       @app.background(colour)
       @app.para(text,

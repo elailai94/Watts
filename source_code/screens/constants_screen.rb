@@ -19,7 +19,7 @@ class ConstantsScreen < Shoes
   # Draws the constants screen on the Shoes app window.
   def constants_screen
     @heading = 'Constants'
-    background("../images/#{@heading.downcase}_large.png")
+    background("../images/#{@heading.downcase.gsub(' ','_')}_large.png")
     
     # Constants screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
