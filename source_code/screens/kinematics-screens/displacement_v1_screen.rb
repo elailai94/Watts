@@ -77,4 +77,3 @@ class DisplacementV1Screen < Shoes
   end
   
 end
-
