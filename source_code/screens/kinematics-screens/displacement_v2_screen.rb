@@ -16,7 +16,7 @@ require_relative '../../elements/screen_edit_line.rb'
 class DisplacementV2Screen < Shoes
 
   url('/title_screen/kinematics_screen/displacement_v2_screen',
-  	  :displacement_v2_screen)
+      :displacement_v2_screen)
 
   # Draws the displacement v2 screen on the Shoes app window.
   def displacement_v2_screen
