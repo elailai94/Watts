@@ -18,21 +18,21 @@ class DisplacementV3Screen < Shoes
   url('/title_screen/kinematics_screen/displacement_v3_screen',
       :displacement_v3_screen)
 
-  # Draws the displacement v2 screen on the Shoes app window.
-  def displacement_v2_screen
+  # Draws the displacement v3 screen on the Shoes app window.
+  def displacement_v3_screen
     background('../images/kinematics_large.png')
 
-    # Displacement v2 screen header
+    # Displacement v3 screen header
     flow(:height => 80, :width => 1080, :scroll => false) do
       @back_button = image('../images/back_icon_white.png',
                            :click => '/title_screen/kinematics_screen')
-      @heading = title('Displacement = (initial velocity × time) + (0.5 × acceleration × time',
+      @heading = title('Displacement = (final velocity × time) - (0.5 × acceleration × time',
                        sup('2'), ')')
       @back_button.style(@@screen_header_image_styles)
       @heading.style(@@screen_header_text_styles)
     end
 
-    # Displacement v2 screen content
+    # Displacement v3 screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
       stack(:height => 640, :width => 80) do
@@ -40,11 +40,11 @@ class DisplacementV3Screen < Shoes
       # Content column 
       stack(:height => 640, :width => 1000) do
         @heading_edited = @heading.text
-        ScreenLabel.new(self, @@font, @heading_edited, 'Initial velocity')
+        ScreenLabel.new(self, @@font, @heading_edited, 'Final velocity')
         flow do
-          @initial_velocity = ScreenEditLine.new(self, @@font, @heading_edited)
-          @initial_velocity_unit = para(strong(' ms'), strong(sup('-1')))
-          @initial_velocity_unit.style(@@screen_unit_text_styles)
+          @final_velocity = ScreenEditLine.new(self, @@font, @heading_edited)
+          @final_velocity_unit = para(strong(' ms'), strong(sup('-1')))
+          @final_velocity_unit.style(@@screen_unit_text_styles)
         end
 
         ScreenLabel.new(self, @@font, @heading_edited, 'Acceleration')
@@ -69,13 +69,13 @@ class DisplacementV3Screen < Shoes
         
         @calculate.click do
           @result_display.clear do
-            @result = Joules.displacement_v2(@initial_velocity.text.to_f,
+            @result = Joules.displacement_v3(@final_velocity.text.to_f,
                                              @acceleration.text.to_f,
                                              @time.text.to_f)
-            @displacement_v2 = para(@result.to_s)
-            @displacement_v2_unit = para(' m')
-            @displacement_v2.style(@@screen_result_text_styles)
-            @displacement_v2_unit.style(@@screen_result_text_styles)
+            @displacement_v3 = para(@result.to_s)
+            @displacement_v3_unit = para(' m')
+            @displacement_v3.style(@@screen_result_text_styles)
+            @displacement_v3_unit.style(@@screen_result_text_styles)
           end
         end
       end
