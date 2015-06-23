@@ -24,6 +24,7 @@ require 'screens/kinematics-screens/acceleration_screen'
 require 'screens/kinematics-screens/final_velocity_v1_screen'
 require 'screens/kinematics-screens/final_velocity_v2_screen'
 require 'screens/kinematics-screens/displacement_v1_screen'
+require 'screens/kinematics-screens/displacement_v2_screen'
 require 'screens/circular_motion_screen'
 require 'data_validation/data_validation'
 
