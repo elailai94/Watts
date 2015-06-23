@@ -34,7 +34,7 @@ class AverageVelocityScreen < Shoes
       end
       # Content column 
       stack(:height => 640, :width => 1000) do
-	    ScreenLabel.new(self, @@font, @heading, 'Displacement')
+        ScreenLabel.new(self, @@font, @heading, 'Displacement')
         flow do
           @displacement = ScreenEditLine.new(self, @@font, @heading)
           @displacement_unit = para(strong(' m'))
