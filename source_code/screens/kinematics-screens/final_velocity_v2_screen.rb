@@ -40,7 +40,7 @@ class FinalVelocityV2Screen < Shoes
       # Content column 
       stack(:height => 640, :width => 1000) do
         @heading_edited = @heading.text
-	      ScreenLabel.new(self, @@font, @heading_edited, 'Initial velocity')
+        ScreenLabel.new(self, @@font, @heading_edited, 'Initial velocity')
         flow do
           @initial_velocity = ScreenEditLine.new(self, @@font, @heading_edited)
           @initial_velocity_unit = para(strong(' ms'), strong(sup('-1')))
