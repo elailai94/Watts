@@ -58,10 +58,10 @@ class AngularVelocityV1Screen < Shoes
           @result_display.clear do
             @result = Joules.angular_velocity_v1(@linear_velocity.text.to_f,
                                                  @radius.text.to_f)
-            @angular_velocity = para(@result.to_s)
-            @angular_velocity_unit = para(' rads', sup('-1'))
-            @angular_velocity.style(@@screen_result_text_styles)
-            @angular_velocity_unit.style(@@screen_result_text_styles)
+            @angular_velocity_v1 = para(@result.to_s)
+            @angular_velocity_v1_unit = para(' rads', sup('-1'))
+            @angular_velocity_v1.style(@@screen_result_text_styles)
+            @angular_velocity_v1_unit.style(@@screen_result_text_styles)
           end
         end
       end
