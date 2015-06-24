@@ -14,20 +14,20 @@ require_relative '../../elements/screen_label.rb'
 require_relative '../../elements/screen_edit_line.rb'
 
 # Object definition
-class WeightScreen < Shoes
+class DensitySubScreen < Shoes
 
-  url('/title_screen/mass_weight_screen/weight_screen',
-      :weight_screen)
+  url('/title_screen/density_screen/density_sub_screen',
+      :density_sub_screen)
 
-  # Draws the weight screen on the Shoes app window.
-  def weight_screen
-    @heading = 'Weight = mass × acceleration of free fall'
-    background('../images/mass_weight_large.png')
+  # Draws the density sub screen on the Shoes app window.
+  def density_sub_screen
+    @heading = 'Density = mass / volume'
+    background('../images/density_large.png')
 
-    # Weight screen header
-    ScreenHeader.new(self, '/title_screen/mass_weight_screen', @@font, @heading)
+    # Density sub screen header
+    ScreenHeader.new(self, '/title_screen/density_screen', @@font, @heading)
 
-    # Weight screen content
+    # Density sub screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
       stack(:height => 640, :width => 80) do
@@ -41,6 +41,13 @@ class WeightScreen < Shoes
           @mass_unit.style(@@screen_unit_text_styles)
         end
 
+        ScreenLabel.new(self, @@font, @heading, 'Volume')
+        flow do
+          @volume = ScreenEditLine.new(self, @@font, @heading)
+          @volume_unit = para(strong(' m'), strong(sup('3')))
+          @volume_unit.style(@@screen_unit_text_styles)
+        end
+
         @calculate = button('Calculate')
         
         @result_display = flow
@@ -49,11 +56,11 @@ class WeightScreen < Shoes
         
         @calculate.click do
           @result_display.clear do
-            @result = Joules.weight(@mass.text.to_f)
-            @weight = para(@result.to_s)
-            @weight_unit = para(' N')
-            @weight.style(@@screen_result_text_styles)
-            @weight_unit.style(@@screen_result_text_styles)
+            @result = Joules.density(@mass.text.to_f, @volume.text.to_f)
+            @density = para(@result.to_s)
+            @density_unit = para(' kgm', sup('-3'))
+            @density.style(@@screen_result_text_styles)
+            @density_unit.style(@@screen_result_text_styles)
           end
         end
       end
