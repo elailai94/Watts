@@ -35,7 +35,7 @@ class DensityScreen < Shoes
       # Content column 
       stack(:height => 640, :width => 1000) do
         @formula_set =
-          {'Density Sub' => 'Density = mass / volume'}
+          {'Density sub' => 'Density = mass / volume'}
         @formula_set.each do |name, formula|
           ScreenBox.new(self, @@theme_colour, @@font, @heading, formula, name)
         end
