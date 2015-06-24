@@ -58,7 +58,7 @@ class AverageVelocityScreen < Shoes
           @result_display.clear do
             @result = Joules.avg_velocity(@displacement.text.to_f, @time.text.to_f)
             @avg_velocity = para(@result.to_s)
-            @avg_velocity_unit = para(' ms', sup('-1'))
+            @avg_velocity_unit = para(strong(' ms'), strong(sup('-1')))
             @avg_velocity.style(@@screen_result_text_styles)
             @avg_velocity_unit.style(@@screen_result_text_styles)
           end

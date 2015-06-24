@@ -19,7 +19,7 @@ class CircularMotionScreen < Shoes
 
   def circular_motion_screen
     @heading = 'Circular motion'
-    @heading_edited = @heading.downcase.gsub(' ','_')
+    @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
     
     # Circular motion screen header

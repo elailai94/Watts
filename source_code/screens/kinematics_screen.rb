@@ -21,7 +21,7 @@ class KinematicsScreen < Shoes
   # Draws the kinematics screen on the Shoes app window.
   def kinematics_screen
     @heading = 'Kinematics'
-    @heading_edited = @heading.downcase.gsub(' ','_')
+    @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
     
     # Kinematics screen header

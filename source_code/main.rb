@@ -27,6 +27,9 @@ require 'screens/kinematics-screens/displacement_v1_screen'
 require 'screens/kinematics-screens/displacement_v2_screen'
 require 'screens/kinematics-screens/displacement_v3_screen'
 require 'screens/circular_motion_screen'
+require 'screens/mass_weight_screen'
+require 'screens/mass-weight-screens/weight_screen'
+require 'screens/mass-weight-screens/mass_screen'
 require 'data_validation/data_validation'
 
 # Stores Shoes app user interface properties.
