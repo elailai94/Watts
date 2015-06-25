@@ -76,7 +76,7 @@ class CircularMotionScreen < Shoes
                                        sup('2'), ' x radius')
           @centripetal_force_v2.style(@@screen_box_text_styles)
           click do
-            visit("/title_screen/#{@heading_edited}_screen/centripetal_acceleration_v2_screen")
+            visit("/title_screen/#{@heading_edited}_screen/centripetal_force_v2_screen")
           end
         end
 
