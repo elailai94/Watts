@@ -41,6 +41,7 @@ require 'screens/mass-weight-screens/weight_screen'
 require 'screens/mass-weight-screens/mass_screen'
 require 'screens/density_screen'
 require 'screens/density-screens/density_sub_screen'
+require 'screens/forces_screen'
 require 'data_validation/data_validation'
 
 # Stores Shoes app user interface properties.
