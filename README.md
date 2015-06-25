@@ -7,3 +7,5 @@ Watts is a desktop application for performing Physics formula calculations. It i
 
 ### License
 * Watts is licensed under the [MIT license](https://www.github.com/elailai94/Watts/blob/master/LICENSE.md).
+* Joules is licensed under the [MIT license](https://www.github.com/elailai94/Joules/blob/master/LICENSE.md).
+* Shoes is licensed under the MIT license.
