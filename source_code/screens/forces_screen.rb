@@ -16,6 +16,7 @@ require_relative 'forces-screens/force_v1_screen.rb'
 require_relative 'forces-screens/force_v2_screen.rb'
 require_relative 'forces-screens/force_v3_screen.rb'
 require_relative 'forces-screens/maximum_friction_force_screen.rb'
+require_relative 'forces-screens/buoyant_force_screen.rb'
 
 # Object definition
 class ForcesScreen < Shoes
