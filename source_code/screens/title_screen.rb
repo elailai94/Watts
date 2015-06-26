@@ -13,14 +13,15 @@ require 'elements/title_screen_image'
 
 # Object definition
 class TitleScreen < Shoes
-  
-  url('/title_screen', :title_screen)
+
+  url('/title_screen',
+      :title_screen)
 
   # Draws the title screen on the Shoes app window.
   def title_screen
     # Title screen header
     TitleScreenHeader.new(self, @@theme_colour, '../images/watts_logo_white.png')
-    
+
     # Title screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       background(ghostwhite)

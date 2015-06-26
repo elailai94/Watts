@@ -12,16 +12,22 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
+require_relative 'forces-screens/force_v1_screen.rb'
+require_relative 'forces-screens/force_v2_screen.rb'
+require_relative 'forces-screens/force_v3_screen.rb'
+require_relative 'forces-screens/maximum_friction_force_screen.rb'
+
 # Object definition
 class ForcesScreen < Shoes
 
-  url('/title_screen/forces_screen', :forces_screen)
+  url('/title_screen/forces_screen',
+      :forces_screen)
 
   def forces_screen
     @heading = 'Forces'
     @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
-    
+
     # Forces screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -30,7 +36,7 @@ class ForcesScreen < Shoes
       # Left margin offset
       stack(:height => 640, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 640, :width => 1000) do
         @formula_set =
           {'Force v1' => 'Force = mass x acceleration',

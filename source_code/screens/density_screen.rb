@@ -12,6 +12,8 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
+require_relative 'density-screens/density_sub_screen.rb'
+
 # Object definition
 class DensityScreen < Shoes
 
@@ -23,7 +25,7 @@ class DensityScreen < Shoes
     @heading = 'Density'
     @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
-    
+
     # Density screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -32,7 +34,7 @@ class DensityScreen < Shoes
       # Left margin offset
       stack(:height => 640, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 640, :width => 1000) do
         @formula_set =
           {'Density sub' => 'Density = mass / volume'}

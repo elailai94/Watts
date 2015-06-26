@@ -12,6 +12,9 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
+require_relative 'mass-weight-screens/weight_screen.rb'
+require_relative 'mass-weight-screens/mass_screen.rb'
+
 # Object definition
 class MassWeightScreen < Shoes
 
@@ -23,7 +26,7 @@ class MassWeightScreen < Shoes
     @heading = 'Mass & weight'
     @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
-    
+
     # Mass weight screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -32,7 +35,7 @@ class MassWeightScreen < Shoes
       # Left margin offset
       stack(:height => 640, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 640, :width => 1000) do
         @formula_set =
           {'Weight' => 'Weight = mass × acceleration of free fall',

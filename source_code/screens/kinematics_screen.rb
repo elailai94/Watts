@@ -12,6 +12,15 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
+require_relative 'kinematics-screens/average_speed_screen.rb'
+require_relative 'kinematics-screens/average_velocity_screen.rb'
+require_relative 'kinematics-screens/acceleration_screen.rb'
+require_relative 'kinematics-screens/final_velocity_v1_screen.rb'
+require_relative 'kinematics-screens/final_velocity_v2_screen.rb'
+require_relative 'kinematics-screens/displacement_v1_screen.rb'
+require_relative 'kinematics-screens/displacement_v2_screen.rb'
+require_relative 'kinematics-screens/displacement_v3_screen.rb'
+
 # Object definition
 class KinematicsScreen < Shoes
 
@@ -23,7 +32,7 @@ class KinematicsScreen < Shoes
     @heading = 'Kinematics'
     @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
-    
+
     # Kinematics screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -32,7 +41,7 @@ class KinematicsScreen < Shoes
       # Left margin offset
       stack(:height => 850, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 850, :width => 1000) do
         @formula_set =
           {'Average speed' => 'Average speed = distance / time',

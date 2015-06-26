@@ -12,16 +12,27 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
+require_relative 'circular-motion-screens/angular_velocity_v1_screen.rb'
+require_relative 'circular-motion-screens/angular_velocity_v2_screen.rb'
+require_relative 'circular-motion-screens/angular_acceleration_screen.rb'
+require_relative 'circular-motion-screens/centripetal_acceleration_v1_screen.rb'
+require_relative 'circular-motion-screens/centripetal_acceleration_v2_screen.rb'
+require_relative 'circular-motion-screens/centripetal_force_v1_screen.rb'
+require_relative 'circular-motion-screens/centripetal_force_v2_screen.rb'
+require_relative 'circular-motion-screens/angular_momentum_screen.rb'
+require_relative 'circular-motion-screens/angular_kinetic_energy_screen.rb'
+
 # Object definition
 class CircularMotionScreen < Shoes
 
-  url('/title_screen/circular_motion_screen', :circular_motion_screen)
+  url('/title_screen/circular_motion_screen',
+      :circular_motion_screen)
 
   def circular_motion_screen
     @heading = 'Circular motion'
     @heading_edited = @heading.downcase.gsub(/[,&]/,'').squeeze(' ').gsub(' ','_')
     background("../images/#{@heading_edited}_large.png")
-    
+
     # Circular motion screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -30,7 +41,7 @@ class CircularMotionScreen < Shoes
       # Left margin offset
       stack(:height => 950, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 950, :width => 1000) do
         @formula_set =
           {'Angular velocity v1' => 'Angular velocity = linear velocity / radius',

@@ -14,13 +14,14 @@ require 'elements/constants_screen_text'
 # Object definition
 class ConstantsScreen < Shoes
 
-  url('/title_screen/constants_screen', :constants_screen)
+  url('/title_screen/constants_screen',
+      :constants_screen)
 
   # Draws the constants screen on the Shoes app window.
   def constants_screen
     @heading = 'Constants'
     background("../images/#{@heading.downcase.gsub(' ','_')}_large.png")
-    
+
     # Constants screen header
     ScreenHeader.new(self, '/title_screen', @@font, @heading)
 
@@ -31,24 +32,24 @@ class ConstantsScreen < Shoes
       	                                  :stroke => rgb(255, 255, 255)}
       # Left margin offset
       stack(:height => 850, :width => 80)
-      # First content column 
+      # First content column
       stack(:height => 850, :width => 500) do
         ConstantsScreenText.new(self, @@font, 'Speed of light in free space')
         @speed_of_light = para('3.00 x 10', sup('8'), ' ms', sup('-1'))
         @speed_of_light.style(@constants_screen_tagline_styles)
-        
+
         ConstantsScreenText.new(self, @@font, 'Permittivity of free space')
         @free_space_permittivity = para('8.85 x 10', sup('-12'), ' Fm', sup('-1'))
         @free_space_permittivity.style(@constants_screen_tagline_styles)
-        
+
         ConstantsScreenText.new(self, @@font, 'Planck constant')
         @planck_constant = para('6.63 x 10', sup('-34'), ' Js')
         @planck_constant.style(@constants_screen_tagline_styles)
-        
+
         ConstantsScreenText.new(self, @@font, 'Rest mass of electron')
         @electron_mass = para('9.11 x 10', sup('-31'), ' kg')
         @electron_mass.style(@constants_screen_tagline_styles)
-        
+
         ConstantsScreenText.new(self, @@font, 'Rest mass of neutron')
         @neutron_mass = para('1.67 x 10', sup('-27'), ' kg')
         @neutron_mass.style(@constants_screen_tagline_styles)

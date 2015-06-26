@@ -12,8 +12,9 @@ require 'elements/splash_screen_image'
 
 # Object definition
 class SplashScreen < Shoes
-  
-  url('/', :splash_screen)
+
+  url('/',
+      :splash_screen)
 
   # Draws the splash screen on the Shoes app window.
   def splash_screen
