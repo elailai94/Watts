@@ -1,33 +1,33 @@
 #==============================================================================
 # Watts
 #
-# @description: Module for providing functions to work with DensitySubScreen
+# @description: Module for providing functions to work with ForceV1Screen
 #   objects
 # @author: Elisha Lai
 # @version: 0.0.1 15/06/2015
 #==============================================================================
 
-# Density sub screen module (density_sub_screen.rb)
+# Force v1 screen module (force_v1_screen.rb)
 
 require_relative '../../elements/screen_header.rb'
 require_relative '../../elements/screen_label.rb'
 require_relative '../../elements/screen_edit_line.rb'
 
 # Object definition
-class DensitySubScreen < Shoes
+class ForceV1Screen < Shoes
 
-  url('/title_screen/density_screen/density_sub_screen',
-      :density_sub_screen)
+  url('/title_screen/forces_screen/force_v1_screen',
+      :force_v1_screen)
 
-  # Draws the density sub screen on the Shoes app window.
-  def density_sub_screen
-    @heading = 'Density = mass / volume'
-    background('../images/density_large.png')
+  # Draws the force v1 screen on the Shoes app window.
+  def force_v1_screen
+    @heading = 'Force = mass x acceleration'
+    background('../images/forces_large.png')
 
-    # Density sub screen header
-    ScreenHeader.new(self, '/title_screen/density_screen', @@font, @heading)
+    # Force v1 screen header
+    ScreenHeader.new(self, '/title_screen/forces_screen', @@font, @heading)
 
-    # Density sub screen content
+    # Force v1 screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
       stack(:height => 640, :width => 80) do
@@ -41,11 +41,11 @@ class DensitySubScreen < Shoes
           @mass_unit.style(@@screen_unit_text_styles)
         end
 
-        ScreenLabel.new(self, @@font, @heading, 'Volume')
+        ScreenLabel.new(self, @@font, @heading, 'Acceleration')
         flow do
-          @volume = ScreenEditLine.new(self, @@font, @heading)
-          @volume_unit = para(strong(' m'), strong(sup('3')))
-          @volume_unit.style(@@screen_unit_text_styles)
+          @acceleration = ScreenEditLine.new(self, @@font, @heading)
+          @acceleration_unit = para(strong(' ms'), strong(sup('-2')))
+          @acceleration_unit.style(@@screen_unit_text_styles)
         end
 
         @calculate = button('Calculate')
@@ -56,12 +56,12 @@ class DensitySubScreen < Shoes
 
         @calculate.click do
           @result_display.clear do
-            @result = Joules.density(@mass.text.to_f,
-                                     @volume.text.to_f)
-            @density = para(@result.to_s)
-            @density_unit = para(' kgm', sup('-3'))
-            @density.style(@@screen_result_text_styles)
-            @density_unit.style(@@screen_result_text_styles)
+            @result = Joules.force_v1(@mass.text.to_f,
+                                      @acceleration.text.to_f)
+            @force_v1 = para(@result.to_s)
+            @force_v1_unit = para(' N')
+            @force_v1.style(@@screen_result_text_styles)
+            @force_v1_unit.style(@@screen_result_text_styles)
           end
         end
       end

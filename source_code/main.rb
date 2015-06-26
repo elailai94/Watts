@@ -9,7 +9,7 @@
 # Main program (main.rb)
 
 # Installs the required Ruby gem.
-Shoes.setup do 
+Shoes.setup do
   gem 'joules'
 end
 
@@ -42,6 +42,9 @@ require 'screens/mass-weight-screens/mass_screen'
 require 'screens/density_screen'
 require 'screens/density-screens/density_sub_screen'
 require 'screens/forces_screen'
+require 'screens/forces-screens/force_v1_screen'
+require 'screens/forces-screens/force_v2_screen'
+require 'screens/forces-screens/force_v3_screen'
 require 'data_validation/data_validation'
 
 # Stores Shoes app user interface properties.
