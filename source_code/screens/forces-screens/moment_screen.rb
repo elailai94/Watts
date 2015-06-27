@@ -12,6 +12,7 @@
 require_relative '../../elements/screen_header.rb'
 require_relative '../../elements/screen_label.rb'
 require_relative '../../elements/screen_edit_line.rb'
+require_relative '../../data_validation/data_validation.rb'
 
 # Object definition
 class MomentScreen < Shoes
@@ -21,7 +22,7 @@ class MomentScreen < Shoes
 
   # Draws the moment screen on the Shoes app window.
   def moment_screen
-    @heading = 'Moment = force x distance x angle'
+    @heading = 'Moment = force x distance x sine(angle)'
     background('../images/forces_large.png')
 
     # Moment screen header
@@ -63,9 +64,14 @@ class MomentScreen < Shoes
 
         @calculate.click do
           @result_display.clear do
+            if DataValidation.is_present(@angle)
+              @angle_to_use = @angle.text
+            else
+              @angle_to_use = '90'
+            end
             @result = Joules.moment(@force.text.to_f,
                                     @distance.text.to_f,
-                                    @angle.text.to_f)
+                                    @angle_to_use.to_f)
             @moment = para(@result.to_s)
             @moment_unit = para(' Nm')
             @moment.style(@@screen_result_text_styles)

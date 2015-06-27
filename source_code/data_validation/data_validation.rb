@@ -24,9 +24,10 @@ module DataValidation
 
   #@!group Data Validation Methods
 
-  #def greater_than(data, )
-  	
-  #end
+  def is_present(edit_line)
+    return !edit_line.text.strip.empty?
+  end
 
+  #@!endgroup
 
 end

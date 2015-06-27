@@ -26,5 +26,5 @@ class ScreenEditLine < Element
   def text
     return @edit_line.text
   end
-	
+
 end

@@ -12,6 +12,7 @@
 require_relative '../../elements/screen_header.rb'
 require_relative '../../elements/screen_label.rb'
 require_relative '../../elements/screen_edit_line.rb'
+require_relative '../../data_validation/data_validation.rb'
 
 # Object definition
 class AverageSpeedScreen < Shoes
@@ -32,7 +33,7 @@ class AverageSpeedScreen < Shoes
       # Left margin offset
       stack(:height => 640, :width => 80) do
       end
-      # Content column 
+      # Content column
       stack(:height => 640, :width => 1000) do
         ScreenLabel.new(self, @@font, @heading, 'Distance')
         flow do
@@ -40,7 +41,7 @@ class AverageSpeedScreen < Shoes
           @distance_unit = para(strong(' m'))
           @distance_unit.style(@@screen_unit_text_styles)
         end
-        
+
         ScreenLabel.new(self, @@font, @heading, 'Time')
         flow do
           @time = ScreenEditLine.new(self, @@font, @heading)
@@ -49,22 +50,22 @@ class AverageSpeedScreen < Shoes
         end
 
         @calculate = button('Calculate')
-        
+
         @result_display = flow
 
         @error_display = flow
-        
+
         @calculate.click do
           #@error = false
           #@error_display.clear
-          
+
           #begin
           #  validate_distance
           #  validate_time
           #rescue TypeError, RangeError
           #  @error = true
           #end
-          
+
           #if !@error
           @result_display.clear do
             @result = Joules.avg_speed(@distance.text.to_f, @time.text.to_f)
@@ -78,7 +79,7 @@ class AverageSpeedScreen < Shoes
       end
     end
   end
-	
+
   def validate_distance
     if !(@distance.text.numeric?)
       @error_display.append do

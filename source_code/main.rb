@@ -22,7 +22,7 @@ require 'screens/circular_motion_screen'
 require 'screens/mass_weight_screen'
 require 'screens/density_screen'
 require 'screens/forces_screen'
-require 'data_validation/data_validation'
+require 'screens/momentum_impulse_screen'
 
 # Stores Shoes app user interface properties.
 class Shoes

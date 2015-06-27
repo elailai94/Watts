@@ -46,7 +46,7 @@ class ForcesScreen < Shoes
            'Force v3' => 'Force = ((final velocity - initial velocity) x mass) / time',
            'Maximum friction force' => 'Maximum friction force = coefficient of friction x normal force',
            'Buoyant force' => 'Buoyant force = density x acceleration of free fall x volume of liquid displaced',
-           'Moment' => 'Moment = force x distance x angle'}
+           'Moment' => 'Moment = force x distance x sine(angle)'}
         @formula_set.each do |name, formula|
           ScreenBox.new(self, @@theme_colour, @@font, @heading, formula, name)
         end
