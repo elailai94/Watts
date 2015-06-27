@@ -13,8 +13,8 @@ require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
 require_relative 'momentum-impulse-screens/momentum_screen.rb'
-#require_relative 'momentum-impulse-screens/impulse_v1_screen.rb'
-#require_relative 'momentum-impulse-screens/impulse_v2_screen.rb'
+require_relative 'momentum-impulse-screens/impulse_v1_screen.rb'
+require_relative 'momentum-impulse-screens/impulse_v2_screen.rb'
 
 # Object definition
 class MomentumImpulseScreen < Shoes
