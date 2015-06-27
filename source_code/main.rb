@@ -23,6 +23,7 @@ require 'screens/mass_weight_screen'
 require 'screens/density_screen'
 require 'screens/forces_screen'
 require 'screens/momentum_impulse_screen'
+require 'screens/energy_work_power_screen'
 
 # Stores Shoes app user interface properties.
 class Shoes
