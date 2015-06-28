@@ -33,10 +33,10 @@ class EnergyWorkPowerScreen < Shoes
     # Energy work power screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
-      stack(:height => 640, :width => 80) do
+      stack(:height => 850, :width => 80) do
       end
       # Content column
-      stack(:height => 640, :width => 1000) do
+      stack(:height => 850, :width => 1000) do
         @formula_set =
           {'Gravitational potential energy' => 'Gravitational potential energy = mass x acceleration of free fall x height'}
         @formula_set.each do |name, formula|
@@ -49,6 +49,60 @@ class EnergyWorkPowerScreen < Shoes
           @elastic_potential_energy.style(@@screen_box_text_styles)
           click do
             visit("/title_screen/#{@heading_edited}_screen/elastic_potential_energy_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @kinetic_energy_v1 = para('Kinetic energy = 0.5 x mass x velocity', sup('2'))
+          @kinetic_energy_v1.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/kinetic_energy_v1_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @work_done = para('Work done = force x displacement x cosine(angle)')
+          @work_done.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/work_done_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @power_v1 = para('Power = work done / time')
+          @power_v1.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/power_v1_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @power_v2 = para('Power = force x velocity x cosine(angle)')
+          @power_v2.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/power_v2_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @energy_efficiency = para('Energy efficiency = (useful energy output / energy input) x 100')
+          @energy_efficiency.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/energy_efficiency_screen")
+          end
+        end
+
+        stack(:height => 100, :width => 940, :margin => 2) do
+          background(@@theme_colour)
+          @power_efficiency = para('Power efficiency = (useful power output / power input) x 100')
+          @power_efficiency.style(@@screen_box_text_styles)
+          click do
+            visit("/title_screen/#{@heading_edited}_screen/power_efficiency_screen")
           end
         end
       end
