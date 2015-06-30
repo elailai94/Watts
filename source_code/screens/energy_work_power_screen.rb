@@ -15,6 +15,7 @@ require_relative '../elements/screen_box.rb'
 require_relative 'energy-work-power-screens/gravitational_potential_energy_screen.rb'
 require_relative 'energy-work-power-screens/elastic_potential_energy_screen.rb'
 require_relative 'energy-work-power-screens/kinetic_energy_v1_screen.rb'
+require_relative 'energy-work-power-screens/work_done_screen.rb'
 
 # Object definition
 class EnergyWorkPowerScreen < Shoes
