@@ -12,9 +12,8 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
-#require_relative 'energy-work-power-screens/gravitational_potential_energy_screen.rb'
-#require_relative 'momentum-impulse-screens/impulse_v1_screen.rb'
-#require_relative 'momentum-impulse-screens/impulse_v2_screen.rb'
+require_relative 'energy-work-power-screens/gravitational_potential_energy_screen.rb'
+require_relative 'energy-work-power-screens/elastic_potential_energy_screen.rb'
 
 # Object definition
 class EnergyWorkPowerScreen < Shoes
@@ -45,7 +44,8 @@ class EnergyWorkPowerScreen < Shoes
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
-          @elastic_potential_energy = para('Elastic potential energy = 0.5 x spring constant x extension', sup('2'))
+          @elastic_potential_energy = para('Elastic potential energy = 0.5 x spring constant x extension',
+                                           sup('2'))
           @elastic_potential_energy.style(@@screen_box_text_styles)
           click do
             visit("/title_screen/#{@heading_edited}_screen/elastic_potential_energy_screen")
