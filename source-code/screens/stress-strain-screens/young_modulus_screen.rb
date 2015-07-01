@@ -57,7 +57,9 @@ class YoungModulusScreen < Shoes
             @result = Joules.young_modulus(@tensile_stress.text.to_f,
                                            @tensile_strain.text.to_f)
             @young_modulus = para(@result.to_s)
+            @young_modulus_unit = para(' Pa')
             @young_modulus.style(@@screen_result_text_styles)
+            @young_modulus_unit.style(@@screen_result_text_styles)
           end
         end
       end
