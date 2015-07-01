@@ -18,6 +18,8 @@ require_relative 'energy-work-power-screens/kinetic_energy_v1_screen.rb'
 require_relative 'energy-work-power-screens/work_done_screen.rb'
 require_relative 'energy-work-power-screens/power_v1_screen.rb'
 require_relative 'energy-work-power-screens/power_v2_screen.rb'
+require_relative 'energy-work-power-screens/energy_efficiency_screen.rb'
+require_relative 'energy-work-power-screens/power_efficiency_screen.rb'
 
 # Object definition
 class EnergyWorkPowerScreen < Shoes
