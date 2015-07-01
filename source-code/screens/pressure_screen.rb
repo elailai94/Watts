@@ -12,7 +12,8 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
-# require_relative 'pressure-screens/pressure_sub_screen.rb'
+require_relative 'pressure-screens/pressure_sub_screen.rb'
+require_relative 'pressure-screens/hydrostatic_pressure_screen.rb'
 
 # Object definition
 class PressureScreen < Shoes
