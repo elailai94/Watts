@@ -35,10 +35,10 @@ class Shoes
   @@font = 'Segoe UI'
   @@screen_header_image_styles = {:height => 50,
                                   :top => 15,
-  	                              :left => 15}
+                                  :left => 15}
   @@screen_header_text_styles = {:width => 940,
-  	                             :top => 4,
-  	                             :left => 80,
+                                 :top => 4,
+                                 :left => 80,
                                  :font => @@font,
                                  :stroke => self.rgb(255, 255, 255),
                                  :wrap => 'trim'}
@@ -51,8 +51,8 @@ class Shoes
   	                           :size => 12,
   	                           :stroke => self.rgb(255, 255, 255)}
   @@screen_result_text_styles = {:font => @@font,
-  	                             :size => 25,
-  	                             :stroke => self.rgb(255, 255, 255)}
+                                 :size => 25,
+                                 :stroke => self.rgb(255, 255, 255)}
   @@screen_error_text_styles = {:font => @@font,
                                 :size => 12,
                                 :stroke => self.rgb(255, 0, 0)}
