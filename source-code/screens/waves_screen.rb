@@ -18,6 +18,11 @@ require_relative 'waves-screens/frequency_v1_screen.rb'
 require_relative 'waves-screens/frequency_v2_screen.rb'
 require_relative 'waves-screens/time_period_v1_screen.rb'
 require_relative 'waves-screens/intensity_screen.rb'
+require_relative 'waves-screens/refractive_index_v1_screen.rb'
+require_relative 'waves-screens/refractive_index_v2_screen.rb'
+require_relative 'waves-screens/magnification_screen.rb'
+require_relative 'waves-screens/focal_length_screen.rb'
+require_relative 'waves-screens/power_of_lens_screen.rb'
 
 # Object definition
 class WavesScreen < Shoes
