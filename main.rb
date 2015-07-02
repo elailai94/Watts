@@ -43,13 +43,13 @@ class Shoes
                                  :stroke => self.rgb(255, 255, 255),
                                  :wrap => 'trim'}
   @@screen_box_text_styles = {:top => 24,
-  	                          :left => 10,
-  	                          :font => @@font,
-  	                          :size => 20,
-  	                          :stroke => self.rgb(255, 255, 255)}
+                              :left => 10,
+                              :font => @@font,
+                              :size => 20,
+                              :stroke => self.rgb(255, 255, 255)}
   @@screen_unit_text_styles = {:font => @@font,
-  	                           :size => 12,
-  	                           :stroke => self.rgb(255, 255, 255)}
+                               :size => 12,
+                               :stroke => self.rgb(255, 255, 255)}
   @@screen_result_text_styles = {:font => @@font,
                                  :size => 25,
                                  :stroke => self.rgb(255, 255, 255)}
