@@ -45,11 +45,11 @@ class OscillationsScreen < Shoes
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
-          @final_velocity_v2 = para('Final velocity = (initial velocity', sup('2'),
+          @particle_acceleration = para('Final velocity = (initial velocity', sup('2'),
                                  ' + (2 × acceleration × displacement))', sup('0.5'))
-          @final_velocity_v2.style(@@screen_box_text_styles)
+          @particle_acceleration.style(@@screen_box_text_styles)
           click do
-            visit("/title_screen/#{@heading_edited}_screen/final_velocity_v2_screen")
+            visit("/title_screen/#{@heading_edited}_screen/particle_acceleration_screen")
           end
         end
       end
