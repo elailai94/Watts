@@ -15,6 +15,7 @@ require_relative '../elements/screen_box.rb'
 require_relative 'waves-screens/wave_speed_screen.rb'
 require_relative 'waves-screens/wavelength_screen.rb'
 require_relative 'waves-screens/frequency_v1_screen.rb'
+require_relative 'waves-screens/frequency_v2_screen.rb'
 
 # Object definition
 class WavesScreen < Shoes
