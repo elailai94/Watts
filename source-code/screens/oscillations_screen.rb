@@ -32,10 +32,10 @@ class OscillationsScreen < Shoes
     # Oscillations screen content
     flow(:height => 640, :width => 1080, :scroll => true) do
       # Left margin offset
-      stack(:height => 1150, :width => 80) do
+      stack(:height => 640, :width => 80) do
       end
       # Content column
-      stack(:height => 1150, :width => 1000) do
+      stack(:height => 640, :width => 1000) do
         @formula_set =
           {'Particle displacement' => 'Particle displacement = amplitude x cosine(angular velocity x time)',
            'Maximum particle speed' => 'Maximum particle speed = angular velocity x amplitude'}
@@ -45,8 +45,8 @@ class OscillationsScreen < Shoes
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
-          @particle_acceleration = para('Final velocity = (initial velocity', sup('2'),
-                                 ' + (2 × acceleration × displacement))', sup('0.5'))
+          @particle_acceleration = para('Particle acceleration = - (angular velocity', sup('2'),
+                                        ' x displacement)')
           @particle_acceleration.style(@@screen_box_text_styles)
           click do
             visit("/title_screen/#{@heading_edited}_screen/particle_acceleration_screen")
