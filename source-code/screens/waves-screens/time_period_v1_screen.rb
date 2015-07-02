@@ -51,7 +51,7 @@ class TimePeriodV1Screen < Shoes
           @result_display.clear do
             @result = Joules.time_period_v1(@frequency.text.to_f)
             @time_period_v1 = para(@result.to_s)
-            @time_period_v1_unit = para(' Hz')
+            @time_period_v1_unit = para(' s')
             @time_period_v1.style(@@screen_result_text_styles)
             @time_period_v1_unit.style(@@screen_result_text_styles)
           end
