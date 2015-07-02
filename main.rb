@@ -27,6 +27,7 @@ require 'source-code/screens/energy_work_power_screen'
 require 'source-code/screens/stress_strain_screen'
 require 'source-code/screens/pressure_screen'
 require 'source-code/screens/thermodynamics_screen'
+require 'source-code/screens/waves_screen'
 
 # Stores Shoes app user interface properties.
 class Shoes

@@ -13,6 +13,7 @@ require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
 require_relative 'thermodynamics-screens/energy_v1_screen.rb'
+require_relative 'thermodynamics-screens/energy_v2_screen.rb'
 
 # Object definition
 class ThermodynamicsScreen < Shoes
