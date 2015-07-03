@@ -55,9 +55,9 @@ class OscillationsScreen < Shoes
 
         stack(:height => 100, :width => 940, :margin => 2) do
           background(@@theme_colour)
-          @particle_acceleration = para('Particle velocity = angular velocity x (amplitude', sup('2'),
+          @particle_velocity = para('Particle velocity = angular velocity x (amplitude', sup('2'),
                                         ' - particle displacement', sup('2'), ')', sup('0.5'))
-          @particle_acceleration.style(@@screen_box_text_styles)
+          @particle_velocity.style(@@screen_box_text_styles)
           click do
             visit("/title_screen/#{@heading_edited}_screen/particle_velocity_screen")
           end
