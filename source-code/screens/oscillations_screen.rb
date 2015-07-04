@@ -16,6 +16,7 @@ require_relative 'oscillations-screens/particle_displacement_screen.rb'
 require_relative 'oscillations-screens/maximum_particle_speed_screen.rb'
 require_relative 'oscillations-screens/particle_acceleration_screen.rb'
 require_relative 'oscillations-screens/particle_velocity_screen.rb'
+require_relative 'oscillations-screens/maximum_particle_acceleration_screen.rb'
 
 # Object definition
 class OscillationsScreen < Shoes
