@@ -9,7 +9,6 @@
 
 # Particle acceleration screen module (particle_acceleration_screen.rb)
 
-require_relative '../../elements/screen_header.rb'
 require_relative '../../elements/screen_label.rb'
 require_relative '../../elements/screen_edit_line.rb'
 
