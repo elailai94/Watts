@@ -15,6 +15,9 @@ require_relative '../elements/screen_box.rb'
 require_relative 'conversions-screens/degrees_screen.rb'
 require_relative 'conversions-screens/radians_screen.rb'
 require_relative 'conversions-screens/kelvins_screen.rb'
+require_relative 'conversions-screens/celcius_screen.rb'
+require_relative 'conversions-screens/metres_per_second_screen.rb'
+require_relative 'conversions-screens/kilometres_per_hour_screen.rb'
 
 # Object definition
 class ConversionsScreen < Shoes
