@@ -30,6 +30,7 @@ require 'source-code/screens/thermodynamics_screen'
 require 'source-code/screens/waves_screen'
 require 'source-code/screens/oscillations_screen'
 require 'source-code/screens/quantum_screen'
+require 'source-code/screens/conversions_screen'
 
 # Stores Shoes app user interface properties.
 class Shoes
