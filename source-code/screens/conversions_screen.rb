@@ -12,7 +12,9 @@
 require_relative '../elements/screen_header.rb'
 require_relative '../elements/screen_box.rb'
 
-#require_relative 'conversions-screens/photon_energy_screen.rb'
+require_relative 'conversions-screens/degrees_screen.rb'
+require_relative 'conversions-screens/radians_screen.rb'
+require_relative 'conversions-screens/kelvins_screen.rb'
 
 # Object definition
 class ConversionsScreen < Shoes
