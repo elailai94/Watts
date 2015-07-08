@@ -14,6 +14,7 @@ require_relative '../elements/screen_box.rb'
 
 require_relative 'geometry-screens/arc_length_screen.rb'
 require_relative 'geometry-screens/circumference_screen.rb'
+require_relative 'geometry-screens/triangle_area_screen.rb'
 
 # Object definition
 class GeometryScreen < Shoes
